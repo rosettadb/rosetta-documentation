@@ -1,0 +1,783 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.8">
+    
+    
+      
+        <title>Security - AdaptiveScale</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.644de097.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="orange">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#secure-store" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="AdaptiveScale" class="md-header__button md-logo" aria-label="AdaptiveScale" data-md-component="logo">
+      
+  <img src="../images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AdaptiveScale
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Security
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="orange"  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="AdaptiveScale" class="md-nav__button md-logo" aria-label="AdaptiveScale" data-md-component="logo">
+      
+  <img src="../images/logo.png" alt="logo">
+
+    </a>
+    AdaptiveScale
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        Installation
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dashboard/" class="md-nav__link">
+        Dashboard
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../datasources/" class="md-nav__link">
+        Data Sources
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../catalogs/" class="md-nav__link">
+        Catalogs
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tags/" class="md-nav__link">
+        Tags
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schedules/" class="md-nav__link">
+        Schedules
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schemaevolution/" class="md-nav__link">
+        Schema Evolution
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../search/" class="md-nav__link">
+        Metadata Search
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sqlexplorer/" class="md-nav__link">
+        SQL Explorer
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../datatransfer/" class="md-nav__link">
+        Data Transfer
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../collections/" class="md-nav__link">
+        Collections
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../alerts/" class="md-nav__link">
+        Alerts
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Security
+      </a>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../adminpanel/" class="md-nav__link">
+        Admin Panel
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<p>When it comes to security AdaptiveScale is divided in two sections:</p>
+<ul>
+<li>Secure store - for storing credentials and other secrutiy related info used during operations like accessing data source.</li>
+<li>Authentication (LDAP) - for allowing/restricting acces to the platform.</li>
+</ul>
+<h1 id="secure-store">Secure Store</h1>
+<p>To secure credentials platform utilizes Java KeyStore in JKS format to create a secure store file. Location of this file and the password used for it's encryption can be configured in <code>application.properties</code> file. Note: these values need to be modified before any data source is added - otherwise all data source passwords for existing data sources need to be re-entered through <strong>UI-&gt;Data Source-&gt;Edit</strong> form.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>proedms.secure.store.file</td>
+<td>keystore.jks</td>
+<td>Yes</td>
+<td>Location of the file where to store keys</td>
+</tr>
+<tr>
+<td>proedms.secure.store.type</td>
+<td>JCEKS</td>
+<td>Yes</td>
+<td>Type of the keystore. Currently only <code>JCEKS</code> is supported</td>
+</tr>
+</tbody>
+</table>
+<h1 id="authentication-ldap">Authentication (LDAP)</h1>
+<p>Authentication in AdaptiveScale is optional and can be enabled/disabled from <code>application.properties</code> file. AdaptiveScale uses LDAP for authentication and it also provides the ability to bring up local server based on provided LDIFF file. Once the user credentials are verified JWT token is created which is valid for 24 hours and all subsequent interactions have this token provided in <code>Authorization</code> header property.</p>
+<p>There are few properties that are required to be set in <code>application.properties</code> in order to enable authentication.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>proedms.security.authentication.enabled</td>
+<td>true</td>
+<td>Y</td>
+<td>This property enables the authenticaiton mechanism in general. Default: false</td>
+</tr>
+<tr>
+<td>proedms.jwt.auth.type</td>
+<td>SECRET</td>
+<td>Y</td>
+<td>Indicates the type of secret JWT will use to has/ecnrypt tokens. Can be set to <code>SECRET</code> for using string type of key. Can be set to <code>KEY</code> for using private key file.</td>
+</tr>
+<tr>
+<td>proedms.jwt.secret</td>
+<td>[String/Path]</td>
+<td>Y</td>
+<td>Depending on how the property <code>proedms.jwt.auth.type</code> this can be either a string type of secret or location to private key file.</td>
+</tr>
+<tr>
+<td>ldap.user.dn.patterns</td>
+<td>ex:uid={0},ou=people</td>
+<td>Y</td>
+<td>User DN Pattern - A DN pattern that can used to directly login users to the LDAP database. This pattern is used for creating a DN string for "direct" user authentication, where the pattern is relative to the base DN in the ldapUrl. <br /><strong>Note</strong>: uid needs to have {0} as value as it will be matched against username provided during login.</td>
+</tr>
+<tr>
+<td>ldap.group.search.base</td>
+<td>ex: <code>ou=groups</code></td>
+<td>Y</td>
+<td>Subtree to search for username</td>
+</tr>
+<tr>
+<td>ldap.url</td>
+<td>ex: <code>ldap://localhost:8389/dc=AdaptiveScale,dc=com</code></td>
+<td>Y</td>
+<td>LDAP url to connect to - can be set as localhost if AdaptiveScale embeded LDAP is to be used.</td>
+</tr>
+<tr>
+<td>ldap.password.attribute</td>
+<td>userPassword</td>
+<td>Y</td>
+<td>Name of the attribute for password in LDAP. Default:<code>userPassword</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>AdaptiveScale also provided embeded LDAP server that can be activated by providing additional properties to properties file. This is useful for the cases where users don't have their own LDAP server or don't want to connect the platform with existing LDAP server. Keeping the configuration sa examples from abvoe and additionally setting the following configurations will allows users to start AdaptiveScale embedded LDAP server based on provided LDIFF file which will contains LDAP data.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>spring.ldap.embedded.ldif</td>
+<td>file:///opt/apt/auth.ldif</td>
+<td>Y</td>
+<td>Absolute path to LDIFF file</td>
+</tr>
+<tr>
+<td>spring.ldap.embedded.base-dn</td>
+<td>dc=AdaptiveScale,dc=com</td>
+<td>Y</td>
+<td>A base dn from where the server will search for users. This is dependent with LDIFF contents and is also needed in <code>ldap.url</code> property.</td>
+</tr>
+<tr>
+<td>spring.ldap.embedded.port</td>
+<td>8389</td>
+<td>Y</td>
+<td>Port on which embedded LDAP server will run.</td>
+</tr>
+</tbody>
+</table>
+<p>Using embedded server requires LDIFF file which is a copy of LDAP data structure dumped to single file. The following example ldiff matches the example configurations given above and creates user with username <code>admin</code> and password <code>admin</code>. Create a file with <code>.ldif</code> extension and add the follwing as it's content.</p>
+<pre><code># LDAP Auth data
+dn: dc=AdaptiveScale,dc=com
+objectclass: top
+objectclass: domain
+objectclass: extensibleObject
+dc: AdaptiveScale
+
+# Organizational Units
+dn: ou=groups,dc=AdaptiveScale,dc=com
+objectclass: top
+objectclass: organizationalUnit
+ou: groups
+
+dn: ou=people,dc=AdaptiveScale,dc=com
+objectclass: top
+objectclass: organizationalUnit
+ou: people
+
+# Accounts
+dn: uid=admin,ou=people,dc=AdaptiveScale,dc=com
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: AdaptiveScale
+sn: AdaptiveScale
+uid: admin
+userPassword: admin
+
+# Create Group Admin
+dn: cn=admins,ou=groups,dc=AdaptiveScale,dc=com
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: admins
+ou: admin
+uniqueMember: uid=admin,ou=people,dc=AdaptiveScale,dc=com
+</code></pre>
+<p>Starting AdaptiveScale with the configration set as above will land user in Login screen where user <code>admin</code> and password <code>admin</code> can be used to authenticate.</p>
+<h1 id="authorization-ldap">Authorization (LDAP)</h1>
+<p>AdaptiveScale utilizes groups/roles for ACL, both authentication and authorization is based on LDAP, this can be configured either from the <code>auth.ldif</code> file or from a LDAP server. Access is divided into the following categories:</p>
+<table>
+<thead>
+<tr>
+<th>Category name</th>
+<th>Category description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DS</td>
+<td>Stands for data-source - handles access for resources under data-source</td>
+</tr>
+<tr>
+<td>CAT</td>
+<td>Stands for catalog - handles access for resources under catalog</td>
+</tr>
+<tr>
+<td>DEP</td>
+<td>Stands for deployment - handles access for resources under deployment</td>
+</tr>
+<tr>
+<td>COL</td>
+<td>Stands for collection - handles access for resources under collection</td>
+</tr>
+<tr>
+<td>DT</td>
+<td>Stands for data-transfer - handles access for resources under data-transfer</td>
+</tr>
+<tr>
+<td>TAG</td>
+<td>Stands for tag - handles access for resources under tag</td>
+</tr>
+<tr>
+<td>SCHED</td>
+<td>Stands for schedule - handles access for resources under schedule</td>
+</tr>
+<tr>
+<td>SEARCH</td>
+<td>Stands for search - handles access for resources under search</td>
+</tr>
+<tr>
+<td>EV</td>
+<td>Stands for schema-evolution - handles access for resources under schema-evolution</td>
+</tr>
+<tr>
+<td>ALERT</td>
+<td>Stands for alert - handles access for resources under alert</td>
+</tr>
+<tr>
+<td>SQLEXPL</td>
+<td>Stands for sql-explorer - handles access for resources under sql-explorer</td>
+</tr>
+<tr>
+<td>GIT</td>
+<td>Stands for git-configuration - handles access for resources under git-configuration</td>
+</tr>
+</tbody>
+</table>
+<p>Besides the categories there is also operational level permissions:</p>
+<table>
+<thead>
+<tr>
+<th>Permission name</th>
+<th>Permission description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>READ</td>
+<td>This permission allows the user to view/list resource(s)</td>
+</tr>
+<tr>
+<td>WRITE</td>
+<td>This permission allows the user to modify resource(s)</td>
+</tr>
+<tr>
+<td>EXECUTE</td>
+<td>This permission allows the user to execute operations on resource(s)</td>
+</tr>
+</tbody>
+</table>
+<p>ACL in AdaptiveScale is achieved by creating a group name that combines the category name as a prefix and permission name as a suffix.</p>
+<p>Like the following example defines a group which has permission to view/list data-sources and assigns the user <code>test</code> as a member of the group which will allow user to have access to the data-sources:</p>
+<pre><code># GROUP DS-READ
+dn: cn=adaptive-ds-readers,ou=groups,dc=adaptivescale,dc=com
+objectClass: top
+objectClass: groupOfNames
+cn: adaptive-ds-read
+member: uid=test,ou=people,dc=adaptivescale,dc=com
+</code></pre>
+<p>Besides the combinations that can be achieved above there is also an <code>adaptive-admin</code> group, members of which have full access to all resources, including the capability to delete resources.</p>
+<p>Example given below shows how an <code>adaptive-admin</code> group looks like:</p>
+<pre><code># GROUP ADMIN
+dn: cn=adaptive-admins,ou=groups,dc=adaptivescale,dc=com
+objectClass: top
+objectClass: groupOfNames
+cn: adaptive-admin
+member: uid=admin,ou=people,dc=adaptivescale,dc=com
+</code></pre>
+<p>Note: Enabling and disabling permissions reflects on the UI components visibility as well.</p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../alerts/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Alerts" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Alerts
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../adminpanel/" class="md-footer__link md-footer__link--next" aria-label="Next: Admin Panel" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Admin Panel
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.5e67fbfe.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c44cc438.min.js"></script>
+      
+    
+  </body>
+</html>

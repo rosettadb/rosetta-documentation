@@ -1,0 +1,37 @@
+:root {
+  --md-primary-bg-color: white;
+}
+
+.md-header {
+  background: var(--md-default-bg-color);
+}
+
+.md-footer {
+  background: var(--md-default-bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--md-primary-bg-color);
+
+
+}
+
+.md-copyright {
+  background-color: transparent;
+  color:var(--md-primary-bg-color);
+
+}
+
+.md-copyright__highlight {
+  color: var(--md-primary-bg-color);
+}
+
+.md-footer-meta {
+  color: black;
+  background-color: transparent;
+}
+
+
+.md-sidebar__scrollwrap {
+  background: var(--md-default-bg-color);
+}

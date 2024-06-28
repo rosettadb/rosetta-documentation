@@ -1,0 +1,954 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.8">
+    
+    
+      
+        <title>Data Sources - AdaptiveScale</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.644de097.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="orange">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#example" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="AdaptiveScale" class="md-header__button md-logo" aria-label="AdaptiveScale" data-md-component="logo">
+      
+  <img src="../images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AdaptiveScale
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Data Sources
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="orange"  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="AdaptiveScale" class="md-nav__button md-logo" aria-label="AdaptiveScale" data-md-component="logo">
+      
+  <img src="../images/logo.png" alt="logo">
+
+    </a>
+    AdaptiveScale
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        Installation
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dashboard/" class="md-nav__link">
+        Dashboard
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Data Sources
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Data Sources
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example
+  </a>
+  
+    <nav class="md-nav" aria-label="Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-a-data-source" class="md-nav__link">
+    Create a data source
+  </a>
+  
+    <nav class="md-nav" aria-label="Create a data source">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jdbc-connection" class="md-nav__link">
+    JDBC connection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-connection" class="md-nav__link">
+    File connection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ftp-connection" class="md-nav__link">
+    FTP connection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#google-bucket-connection" class="md-nav__link">
+    Google Bucket connection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s3-amazon-connection" class="md-nav__link">
+    S3 Amazon connection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#microsoft-azure-connection" class="md-nav__link">
+    Microsoft Azure connection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hdfs-connection" class="md-nav__link">
+    HDFS connection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#db2-connection" class="md-nav__link">
+    DB2 connection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oracle-connection" class="md-nav__link">
+    Oracle connection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#snowflake-connection" class="md-nav__link">
+    Snowflake connection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bigquery-connection" class="md-nav__link">
+    Bigquery connection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#microsoft-sql-server-connection" class="md-nav__link">
+    Microsoft SQL Server connection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#postgresql-connection" class="md-nav__link">
+    PostgreSQL connection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mysql-connection" class="md-nav__link">
+    MySQL connection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kinetica-connection" class="md-nav__link">
+    Kinetica connection
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edit-a-data-source" class="md-nav__link">
+    Edit a data source
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-a-data-source" class="md-nav__link">
+    Delete a data source
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-for-a-data-source" class="md-nav__link">
+    Search for a data source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../catalogs/" class="md-nav__link">
+        Catalogs
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tags/" class="md-nav__link">
+        Tags
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schedules/" class="md-nav__link">
+        Schedules
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schemaevolution/" class="md-nav__link">
+        Schema Evolution
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../search/" class="md-nav__link">
+        Metadata Search
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sqlexplorer/" class="md-nav__link">
+        SQL Explorer
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../datatransfer/" class="md-nav__link">
+        Data Transfer
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../collections/" class="md-nav__link">
+        Collections
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../alerts/" class="md-nav__link">
+        Alerts
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../security/" class="md-nav__link">
+        Security
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../adminpanel/" class="md-nav__link">
+        Admin Panel
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example
+  </a>
+  
+    <nav class="md-nav" aria-label="Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-a-data-source" class="md-nav__link">
+    Create a data source
+  </a>
+  
+    <nav class="md-nav" aria-label="Create a data source">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jdbc-connection" class="md-nav__link">
+    JDBC connection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-connection" class="md-nav__link">
+    File connection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ftp-connection" class="md-nav__link">
+    FTP connection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#google-bucket-connection" class="md-nav__link">
+    Google Bucket connection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s3-amazon-connection" class="md-nav__link">
+    S3 Amazon connection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#microsoft-azure-connection" class="md-nav__link">
+    Microsoft Azure connection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hdfs-connection" class="md-nav__link">
+    HDFS connection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#db2-connection" class="md-nav__link">
+    DB2 connection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oracle-connection" class="md-nav__link">
+    Oracle connection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#snowflake-connection" class="md-nav__link">
+    Snowflake connection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bigquery-connection" class="md-nav__link">
+    Bigquery connection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#microsoft-sql-server-connection" class="md-nav__link">
+    Microsoft SQL Server connection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#postgresql-connection" class="md-nav__link">
+    PostgreSQL connection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mysql-connection" class="md-nav__link">
+    MySQL connection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kinetica-connection" class="md-nav__link">
+    Kinetica connection
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edit-a-data-source" class="md-nav__link">
+    Edit a data source
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-a-data-source" class="md-nav__link">
+    Delete a data source
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-for-a-data-source" class="md-nav__link">
+    Search for a data source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+  <h1>Data Sources</h1>
+
+<p>Data sources is the category where the user sets, creates a data source connection. There are six options to choose from, a JDBC driver, file, file transfer protocol(FTP), Google Cloud Storage (GCS), Amazon Simple Storage Service (Amazon S3) and Microsoft Azure. The supported database servers are: MySQL, MS SQL Server, Postgres, Oracle, BigQuery, and Generic driver. To create a new data source connection the user needs to fill in the connection name, description, a host and a port for the server, database name for the utilized database server with a username and password, define a driver class name and upload a JDBC driver. All these fields are saved and the newly created data source connection is shown in a list of Data source connections, where there are options to edit and delete it.
+For a new file or FTP data source connection the user need to fill in the connection name, choose a URI of the file, and from the dropdown choose CSV or AVRO which should be same as the type of the file. The same applies for the other connections that are left with some small differences for example, for GCS data source connection the user must add the Service Account, for Amazon S3 the user must provide the Access Key ID and Secret Access Key and for Microsoft Azure
+the user should fill Account Name, Container Name and SAS Token.</p>
+<h2 id="example">Example</h2>
+<h3 id="create-a-data-source">Create a data source</h3>
+<p>To create a data source, the user must click on Data Source tab from the menu on the left.</p>
+<p>If there are no data sources configured, the user clicks on <code>Add Data Source</code> button to add a new data source.</p>
+<p><img alt="" src="../images/datasources/addDataSourceDashboard.png" /></p>
+<p>When <code>Add Data Source</code> button is clicked, a new screen with fifteen options to choose from for data source connection is shown.</p>
+<p><img alt="" src="../images/datasources/datasourceTypes.png" /></p>
+<p><img alt="" src="../images/datasources/datasourceTypes2.png" /></p>
+<h4 id="jdbc-connection">JDBC connection</h4>
+<p>If the user chooses JDBC connection type, must fill some fields such as , connection name that should be unique, a description, hostname and port based on the DB server chosen from the dropdown list, configured username and password for the data source, the JDBC driver should be uploaded and JDBC connection string should be given in a format <code>jdbc:sqlserver://{host}[:{port}][databasename={database}]</code>.</p>
+<p>When the user fills all the fields the connection can be tested by clicking the button <code>Test</code> that will turn green if the connection is correct, and turn red if the connection is wrong.</p>
+<p>After clicking <code>Save</code> button all the input is saved and the data source is ready for use.</p>
+<p><img alt="" src="../images/datasources/datasourcefilled.png" /></p>
+<h4 id="file-connection">File connection</h4>
+<p>If the user chooses file connection type the user needs to fill a name, choose a type of the file, csv, avro or parquet, and fill the URI of the file.</p>
+<p>When the user fills all the fields the connection can be tested by clicking the button <code>Test</code> that will turn green if the connection is correct, and turn red if the connection is wrong.</p>
+<p>After clicking <code>Save</code> button all the input is saved and the data source is ready for use.</p>
+<p><img alt="" src="../images/datasources/fileconnection.png" /></p>
+<h4 id="ftp-connection">FTP connection</h4>
+<p>If the user chooses FTP connection type it needs to fill a name, choose a type,  a directory, csv, avro or parquet, and fill the URI of the file starting with <code>file://</code>. In order to explore what files are inside the directory by clicking on <code>Explore</code> the user must specify the URI. If it clicks on one of the files of that directory, the URI will be re written automatically.</p>
+<p>After clicking <code>Save</code> button all the input is saved and the data source is ready for use.
+<img alt="" src="../images/datasources/ftpdatasourceexplore.png" /></p>
+<p><img alt="" src="../images/datasources/ftpdatasource.png" /></p>
+<h4 id="google-bucket-connection">Google Bucket connection</h4>
+<p>If the user chooses Google Bucket connection type the user needs to fill a name, choose a type,  a directory, csv, avro or parquet, write the service account key and fill the URI of the file starting with <code>gs://</code>. The user can explore what files are inside the bucket by clicking on <code>Explore</code>, even without filling the URI . If it clicks on one of the files or directories of that bucket, the URI will be filled or re written automatically.</p>
+<p>After clicking <code>Save</code> button all the input is saved and the data source is ready for use.</p>
+<p><img alt="" src="../images/datasources/gcsconnectionexplore.png" /></p>
+<p><img alt="" src="../images/datasources/gcsconnection.png" /></p>
+<h4 id="s3-amazon-connection">S3 Amazon connection</h4>
+<p>If the user chooses S3 Amazon connection type the user needs to fill a name, choose a schema type of the file, csv, avro or parquet,  provide access key ID and secret access key and fill the URI of the file starting with <code>s3a://</code>. The user can explore what files are inside the bucket by clicking on <code>Explore</code>, even without filling the URI . If it clicks on one of the files or directories of that bucket, the URI will be filled or re written automatically.</p>
+<p>After clicking <code>Save</code> button all the input is saved and the data source is ready for use.</p>
+<p><img alt="" src="../images/datasources/s3connectionexplore.png" /></p>
+<p><img alt="" src="../images/datasources/s3connection.png" /></p>
+<h4 id="microsoft-azure-connection">Microsoft Azure connection</h4>
+<p>If the user chooses Microsoft Azure connection type the user needs to fill a name, choose a schema type of the file, csv, avro or parquet, provide Account name, Container name and SAS token and fill the URI of the file starting with <code>wasbs://</code>. The user can explore what files are inside the bucket by clicking on <code>Explore</code>, even without filling the URI . If it clicks on one of the files or directories of that bucket, the URI will be filled or re written automatically.</p>
+<p>After clicking <code>Save</code> button all the input is saved and the data source is ready for use.</p>
+<p><img alt="" src="../images/datasources/azureconnection.png" /></p>
+<h4 id="hdfs-connection">HDFS connection</h4>
+<p>If the user chooses HDFS connection type it needs to fill a name, choose a type, a directory, csv, avro or parquet, and fill the URI of the file starting with <code>file://</code>. In order to explore what files are inside the directory by clicking on <code>Explore</code> the user must specify the URI. If it clicks on one of the files of that directory, the URI will be re written automatically.</p>
+<p>When the user fills all the fields the connection can be tested by clicking the button <code>Test</code> that will turn green if the connection is correct, and turn red if the connection is wrong.</p>
+<p>After clicking <code>Save</code> button all the input is saved and the data source is ready for use.</p>
+<p><img alt="" src="../images/datasources/hdfsconnectionexplore.png" /></p>
+<p><img alt="" src="../images/datasources/hdfsconnection.png" /></p>
+<h4 id="db2-connection">DB2 connection</h4>
+<p>If the user chooses DB2 connection type, must fill some fields such as , connection name that should be unique, a description, hostname and port, configured username and password for the data source, the driver should be uploaded and JDBC connection string should be given in a format <code>jdbc:db2://${host}:${port}</code>.</p>
+<p>When the user fills all the fields the connection can be tested by clicking the button <code>Test</code> that will turn green if the connection is correct, and turn red if the connection is wrong.</p>
+<p>After clicking <code>Save</code> button all the input is saved and the data source is ready for use.</p>
+<p><img alt="" src="../images/datasources/db2filled.png" /></p>
+<h4 id="oracle-connection">Oracle connection</h4>
+<p>If the user chooses Oracle connection type, must fill some fields such as , connection name that should be unique, a description, hostname and port, configured username and password for the data source, the driver should be uploaded and JDBC connection string should be given in a format <code>jdbc:oracle:thin:@//${host}:${port}</code>.</p>
+<p>When the user fills all the fields the connection can be tested by clicking the button <code>Test</code> that will turn green if the connection is correct, and turn red if the connection is wrong.</p>
+<p>After clicking <code>Save</code> button all the input is saved and the data source is ready for use.</p>
+<p><img alt="" src="../images/datasources/oraclefilled.png" /></p>
+<h4 id="snowflake-connection">Snowflake connection</h4>
+<p>If the user chooses Snowflake connection type, must fill some fields such as , connection name that should be unique, a description, hostname and port, configured username and password for the data source, the driver should be uploaded and JDBC connection string should be given in a format <code>jdbc:snowflake://${host}:${port}/db=dbname</code>.</p>
+<p>When the user fills all the fields the connection can be tested by clicking the button <code>Test</code> that will turn green if the connection is correct, and turn red if the connection is wrong.</p>
+<p>After clicking <code>Save</code> button all the input is saved and the data source is ready for use.</p>
+<p><img alt="" src="../images/datasources/snowflakefilled.png" /></p>
+<h4 id="bigquery-connection">Bigquery connection</h4>
+<p>If the user chooses Bigquery connection type, must fill some fields such as , connection name that should be unique, a description, database name, the driver should be uploaded and JDBC connection string should be given in a format <code>jdbc:bigquery://{host}[:{port}][;databaseName={database}]</code>.</p>
+<p>When the user fills all the fields the connection can be tested by clicking the button <code>Test</code> that will turn green if the connection is correct, and turn red if the connection is wrong.</p>
+<p>After clicking <code>Save</code> button all the input is saved and the data source is ready for use.</p>
+<p><img alt="" src="../images/datasources/bigqueryfilled.png" /></p>
+<h4 id="microsoft-sql-server-connection">Microsoft SQL Server connection</h4>
+<p>If the user chooses Microsoft SQL Server connection type, must fill some fields such as , connection name that should be unique, a description, hostname and port, configured username and password for the data source, the driver should be uploaded and connection string should be given in a format <code>jdbc:sqlserver://{host}[:{port}][databasename={database}]</code>.</p>
+<p>When the user fills all the fields the connection can be tested by clicking the button <code>Test</code> that will turn green if the connection is correct, and turn red if the connection is wrong.</p>
+<p>After clicking <code>Save</code> button all the input is saved and the data source is ready for use.</p>
+<p><img alt="" src="../images/datasources/msqlfilled.png" /></p>
+<h4 id="postgresql-connection">PostgreSQL connection</h4>
+<p>If the user chooses PostgreSQL connection type, must fill some fields such as , connection name that should be unique, a description, hostname and port, configured username and password for the data source, the driver should be uploaded and connection string should be given in a format <code>jdbc:postgresql://${host}:${port}</code>.</p>
+<p>When the user fills all the fields the connection can be tested by clicking the button <code>Test</code> that will turn green if the connection is correct, and turn red if the connection is wrong.</p>
+<p>After clicking <code>Save</code> button all the input is saved and the data source is ready for use.</p>
+<p><img alt="" src="../images/datasources/postgresqlfilled.png" /></p>
+<h4 id="mysql-connection">MySQL connection</h4>
+<p>If the user chooses MySQL connection type, must fill some fields such as , connection name that should be unique, a description, hostname and port, configured username and password for the data source, the driver should be uploaded and connection string should be given in a format <code>jdbc:mysql://${host}:${port}</code>.</p>
+<p>When the user fills all the fields the connection can be tested by clicking the button <code>Test</code> that will turn green if the connection is correct, and turn red if the connection is wrong.</p>
+<p>After clicking <code>Save</code> button all the input is saved and the data source is ready for use.</p>
+<p><img alt="" src="../images/datasources/mysqlfilled.png" /></p>
+<h4 id="kinetica-connection">Kinetica connection</h4>
+<p>If the user chooses Kinetica connection type, must fill some fields such as , connection name that should be unique, a description, hostname and port, a database name, configured username and password for the data source, attributes such as key-value pairs can be added, the driver should be uploaded and connection string should be given in a format <code>jdbc:kinetica:URL=http://${host}:${port}</code>.</p>
+<p>When the user fills all the fields the connection can be tested by clicking the button <code>Test</code> that will turn green if the connection is correct, and turn red if the connection is wrong.</p>
+<p>After clicking <code>Save</code> button all the input is saved and the data source is ready for use.</p>
+<p><img alt="" src="../images/datasources/kineticafilled.png" /></p>
+<h3 id="edit-a-data-source">Edit a data source</h3>
+<p>Now that one data source is configured, on Data Source tab the user can see a list of the data sources and a button <code>Add Data Source</code> that redirects to the Data source screen for creating a new data source. The data source can be edited, deleted and searched.</p>
+<p><img alt="" src="../images/datasources/datasourcelist.png" /></p>
+<p>When the user clicks on the pen icon next to the data sources from the list they can edit some of the fields and save the changes.</p>
+<p><img alt="" src="../images/datasources/editdatasource.png" /></p>
+<h3 id="delete-a-data-source">Delete a data source</h3>
+<p>The deletion of a data source is done by clicking on the bin icon.</p>
+<p><img alt="" src="../images/datasources/deletedatasource.png" /></p>
+<p>When the icon is clicked, a pop up appears with a question if the user is sure about deleting the data source, and if yes the user clicks Delete and if not clicks Cancel.</p>
+<p><img alt="" src="../images/datasources/deletedatasourcequestion.png" /></p>
+<h3 id="search-for-a-data-source">Search for a data source</h3>
+<p>The user can search for a data source from the list of data sources. The data source that we created as an example is named <code>data source demo</code>, so if the user searches for <code>test</code> there will be no results.</p>
+<p><img alt="" src="../images/datasources/searchdatasource.png" /></p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../dashboard/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Dashboard" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Dashboard
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../catalogs/" class="md-footer__link md-footer__link--next" aria-label="Next: Catalogs" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Catalogs
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.5e67fbfe.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c44cc438.min.js"></script>
+      
+    
+  </body>
+</html>

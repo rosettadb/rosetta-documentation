@@ -1,0 +1,47 @@
+site_name: Rosetta 
+theme:
+  name: material
+  logo: ../images/rosettalogo.png
+  favicon: ../images/favicon.png
+
+  font:
+    text: Roboto
+  palette:
+    - scheme: default
+      primary: white
+      accent: orange
+      toggle:
+        name: Switch to dark mode
+        icon: material/weather-night
+    - scheme: slate
+      primary: black
+      accent: orange
+      toggle:
+        name: Switch to light mode
+        icon: material/weather-sunny
+  
+nav:
+  - Introduction: index.md
+  - Installation: installation.md
+  - Dashboard: dashboard.md
+  - Data Sources: datasources.md
+  - Catalogs: catalogs.md
+  - Tags: tags.md
+  - Schedules: schedules.md
+  - Schema Evolution: schemaevolution.md
+  - Metadata Search: search.md
+  - SQL Explorer: sqlexplorer.md
+  - Data Transfer: datatransfer.md
+  - Collections: collections.md
+  - Alerts: alerts.md
+  - Security: security.md
+  - Admin Panel: adminpanel.md
+
+extra:
+  generator: false
+
+copyright: ⓒ <script>document.write(new Date().getFullYear())</script> RosettaDB. All rights reserved.
+
+
+extra_css:
+  - ../theme/style.css
