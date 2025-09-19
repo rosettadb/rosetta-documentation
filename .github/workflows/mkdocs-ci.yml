@@ -34,5 +34,5 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-          cd ../rosetta-ee-docs.github.io/
+          cd ../rosetta-documentation.github.io/
           mkdocs gh-deploy --config-file ../rosetta-documentation/mkdocs.yml --remote-branch master
